@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "pRGkw+la/1zurqEYfgr81y8/N9j3bFZqgPKJcPbcS1xP5rgkzQcpGVZ7/3gWCyWWuKIWQE/fZ27pXp0lJCVWTw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ershad\\.nuget\\packages\\masstransit.abstractions\\8.1.0\\masstransit.abstractions.8.1.0.nupkg.sha512",
+    "C:\\Users\\Ershad\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
+    "C:\\Users\\Ershad\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Ershad\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,48 @@
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Application.Dto;
+using Application.Repository;
+using Application.Services;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+
+namespace Infrastructure;
+
+public class JwtManager : IJwtManager
+{
+    private readonly IUnitOfWork _unitOfWork;
+    private readonly IConfiguration _configuration;
+    public JwtManager(IConfiguration configuration, IUnitOfWork unitOfWork)
+    {
+        _configuration = configuration;
+        _unitOfWork = unitOfWork;
+    }
+
+    public async Task<TokenDto> CreateTokenAsync(string username,string password)
+    {
+        var user = await _unitOfWork.UserRepository.GetAsync(username, password,CancellationToken.None);
+        if (user == null)
+        {
+            throw new Exception("user not found");
+        }
+        
+        var tokenHandler = new JwtSecurityTokenHandler();
+        var tokenKey = Encoding.UTF8.GetBytes(_configuration["JWT:Key"]!);
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Subject = new ClaimsIdentity(new Claim[]
+            {
+                new(CustomClaim.UserId, user.Guid.ToString())
+            }),
+            Expires = new DateTime(2024,10,10),
+            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey),
+                SecurityAlgorithms.HmacSha256Signature)
+        };
+        var token = tokenHandler.CreateToken(tokenDescriptor);
+
+
+        return new TokenDto { Token = tokenHandler.WriteToken(token) };
+
+    }
+}
