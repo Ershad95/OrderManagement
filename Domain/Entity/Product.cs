@@ -8,4 +8,8 @@ public class Product : BaseEntity
     {
         Name = name;
     }
+    protected Product()
+    {
+        
+    }
 }

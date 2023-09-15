@@ -8,4 +8,9 @@ public class Part : BaseEntity
     {
         Name = name;
     }
+
+    protected Part()
+    {
+        
+    }
 }
