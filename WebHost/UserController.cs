@@ -1,7 +1,7 @@
-﻿using Application.Features.AddUser;
+﻿using Application.Features.SignIn;
+using Application.Features.SignUp;
 using Application.Services;
 using AutoMapper;
-using Domain.Entity;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -22,27 +22,24 @@ public class UserController : Controller
         _mapper = mapper;
     }
 
-    /// <summary>
-    /// ورود کاربر
+   
     [AllowAnonymous]
     [HttpPost]
     [Route("signin")]
-    public async Task<IActionResult> SignIn([FromBody] SignInVm signInVm)
+    public async Task<IActionResult> SignIn([FromBody] SignInVm signInVm, CancellationToken cancellationToken)
     {
-        var token = await _jwtManager.CreateTokenAsync(signInVm.Username, signInVm.Password);
-        return Ok(token);
+        var signInCommand = _mapper.Map<SignInCommand>(signInVm);
+        var response = await _mediator.Send(signInCommand, cancellationToken);
+        return Ok(response);
     }
 
-    /// <summary>
-    /// ثبت کاربر جدید
     [AllowAnonymous]
     [HttpPost]
     [Route("signup")]
     public async Task<IActionResult> SignUp([FromBody] SignUpVm signUpVm, CancellationToken cancellationToken)
     {
-        var addUserCommand = _mapper.Map<AddUserCommand>(signUpVm);
+        var addUserCommand = _mapper.Map<SignUpCommand>(signUpVm);
         var response = await _mediator.Send(addUserCommand, cancellationToken);
         return Ok(response);
     }
 }
-

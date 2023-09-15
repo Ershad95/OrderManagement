@@ -5,5 +5,5 @@ namespace Application.Services;
 
 public interface IJwtManager
 {
-    Task<TokenDto> CreateTokenAsync(string username,string password);
+    Task<TokenDto> CreateTokenAsync(string username,string password,CancellationToken cancellationToken);
 }

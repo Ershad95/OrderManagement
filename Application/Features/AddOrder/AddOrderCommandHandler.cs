@@ -1,4 +1,5 @@
-﻿using Application.Events;
+﻿using Application.Dto;
+using Application.Events;
 using Application.Repository;
 using Application.Services;
 using Domain.Entity;
@@ -7,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Application.Features.AddOrder;
 
-public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, bool>
+public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, OrderResultDto>
 {
     private readonly IUserService _userService;
     private readonly IUnitOfWork _unitOfWork;
@@ -29,7 +30,7 @@ public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, b
         _dateTimeService = dateTimeService;
     }
 
-    public async Task<bool> Handle(AddOrderCommand request, CancellationToken cancellationToken)
+    public async Task<OrderResultDto> Handle(AddOrderCommand request, CancellationToken cancellationToken)
     {
         try
         {
@@ -53,12 +54,12 @@ public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, b
             await _bus.Publish(orderAddedEvent, cancellationToken);
             _logger.LogInformation(message:"Order Created Event Raised");
 
-            return true;
+            return new OrderResultDto(order.Id,order.CreatedDateTime);
         }
         catch (Exception exception)
         {
             _logger.LogCritical(message: exception.Message);
-            return false;
+            return new OrderResultDto(0,null);
         }
     }
 }

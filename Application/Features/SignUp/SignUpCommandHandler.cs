@@ -5,22 +5,22 @@ using AutoMapper;
 using Domain.Entity;
 using MediatR;
 
-namespace Application.Features.AddUser;
+namespace Application.Features.SignUp;
 
-public class AddUserCommandHandler : IRequestHandler<AddUserCommand,TokenDto>
+public class SignUpCommandHandler : IRequestHandler<SignUpCommand, TokenDto>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
     private readonly IJwtManager _jwtManager;
 
-    public AddUserCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, IJwtManager jwtManager)
+    public SignUpCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, IJwtManager jwtManager)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
         _jwtManager = jwtManager;
     }
 
-    public async Task<TokenDto> Handle(AddUserCommand request, CancellationToken cancellationToken)
+    public async Task<TokenDto> Handle(SignUpCommand request, CancellationToken cancellationToken)
     {
         var usernameIsExist =
             await _unitOfWork.UserRepository.CheckUserNameIsAvailibleAsync(request.UserName, cancellationToken);
@@ -33,7 +33,8 @@ public class AddUserCommandHandler : IRequestHandler<AddUserCommand,TokenDto>
         var user = _mapper.Map<User>(request);
         await _unitOfWork.UserRepository.AddAsync(user, cancellationToken);
         await _unitOfWork.SaveAsync(cancellationToken);
-        var token = await _jwtManager.CreateTokenAsync(request.UserName, request.Password);
+        
+        var token = await _jwtManager.CreateTokenAsync(request.UserName, request.Password, cancellationToken);
         return token;
     }
 }

@@ -9,7 +9,7 @@ public class UserService : IUserService
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IUserRepository _userRepository;
 
-    public UserService(IHttpContextAccessor httpContextAccessor,IUserRepository userRepository)
+    public UserService(IHttpContextAccessor httpContextAccessor, IUserRepository userRepository)
     {
         _httpContextAccessor = httpContextAccessor;
         _userRepository = userRepository;
@@ -17,8 +17,8 @@ public class UserService : IUserService
 
     public async Task<User?> GetCurrentUserAsync(CancellationToken cancellationToken)
     {
-        var claim = _httpContextAccessor.HttpContext!.User.Claims.FirstOrDefault(x => x.Type == "UserId");
+        var claim = _httpContextAccessor.HttpContext!.User.Claims.FirstOrDefault(x => x.Type == CustomClaim.UserGuid);
         var userGuid = Guid.Parse(claim!.Value);
-        return  await _userRepository.GetAsync(userGuid,cancellationToken);   
+        return await _userRepository.GetAsync(userGuid, cancellationToken);
     }
 }

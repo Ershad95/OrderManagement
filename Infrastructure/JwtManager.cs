@@ -1,6 +1,7 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Application;
 using Application.Dto;
 using Application.Repository;
 using Application.Services;
@@ -20,9 +21,9 @@ public class JwtManager : IJwtManager
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<TokenDto> CreateTokenAsync(string username, string password)
+    public async Task<TokenDto> CreateTokenAsync(string username, string password,CancellationToken cancellationToken)
     {
-        var user = await _unitOfWork.UserRepository.GetAsync(username, password, CancellationToken.None);
+        var user = await _unitOfWork.UserRepository.GetAsync(username, password, cancellationToken);
         if (user == null)
         {
             throw new Exception("user not found");
@@ -34,7 +35,7 @@ public class JwtManager : IJwtManager
         {
             Subject = new ClaimsIdentity(new Claim[]
             {
-                new(CustomClaim.UserId, user.Guid.ToString())
+                new(CustomClaim.UserGuid, user.Guid.ToString())
             }),
             Expires = DateTime.UtcNow.AddDays(30),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey),
