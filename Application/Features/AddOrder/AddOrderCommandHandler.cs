@@ -35,7 +35,17 @@ public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, O
         try
         {
             var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
-            
+            if (currentUser == null)
+            {
+                throw new Exception("user can not found");
+            }
+
+            var checkPart = currentUser.Parts!.Any(x => x.Id == request.PartId);
+            if (!checkPart)
+            {
+                throw new InvalidOperationException($"user can not add order with partId : {request.PartId}");
+            }
+
             var order = new Order(
                 userId: currentUser.Id,
                 productId: request.ProductId,
@@ -43,8 +53,8 @@ public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, O
                 createdDateTime: _dateTimeService.Now);
             await _unitOfWork.OrderRepository.AddAsync(order, cancellationToken);
             await _unitOfWork.SaveAsync(cancellationToken);
-            _logger.LogInformation(message:"Order Created");
-            
+            _logger.LogInformation(message: "Order Created");
+
             var orderAddedEvent = new OrderCreated(
                 OrderId: order.Id,
                 ProductId: request.ProductId,
@@ -52,14 +62,14 @@ public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, O
                 MobileNumber: currentUser.MobileNumber,
                 Email: currentUser.Email);
             await _bus.Publish(orderAddedEvent, cancellationToken);
-            _logger.LogInformation(message:"Order Created Event Raised");
+            _logger.LogInformation(message: "Order Created Event Raised");
 
-            return new OrderResultDto(order.Id,order.CreatedDateTime);
+            return new OrderResultDto(order.Id, order.CreatedDateTime,"درخواست شما ثبت شد");
         }
         catch (Exception exception)
         {
             _logger.LogCritical(message: exception.Message);
-            return new OrderResultDto(0,null);
+            return new OrderResultDto(0, null,"مشکلی در ثبت درخواست وجود دارد");
         }
     }
 }

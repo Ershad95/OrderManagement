@@ -1,3 +1,3 @@
 ﻿namespace Application.Dto;
 
-public record OrderResultDto(int OrderId, DateTime? CreatedDateTime);
+public record OrderResultDto(int OrderId, DateTime? CreatedDateTime,string Message);

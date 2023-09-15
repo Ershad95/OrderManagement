@@ -31,13 +31,19 @@ public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, Del
         try
         {
             var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
+            
             var order = await _unitOfWork.OrderRepository.GetOrderAsync(request.Id, currentUser.Id, cancellationToken);
-
             if (order is null)
             {
                 throw new UnauthorizedAccessException();
             }
-
+            
+            var checkPart = currentUser.Parts!.Any(x => x.Id == order.PartId);
+            if (!checkPart)
+            {
+                throw new InvalidOperationException();
+            }
+            
             order.MarkAsDeleted();
             await _unitOfWork.SaveAsync(cancellationToken);
 

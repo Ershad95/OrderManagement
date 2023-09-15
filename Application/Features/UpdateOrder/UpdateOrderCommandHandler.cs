@@ -42,6 +42,12 @@ public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand, Upd
             {
                 throw new UnauthorizedAccessException();
             }
+            
+            var checkPart = currentUser.Parts!.Any(x => x.Id == order.PartId);
+            if (!checkPart)
+            {
+                throw new InvalidOperationException();
+            }
 
             order.UpdateOrder(request.ProductId, request.PartId);
             await _unitOfWork.SaveAsync(cancellationToken);
