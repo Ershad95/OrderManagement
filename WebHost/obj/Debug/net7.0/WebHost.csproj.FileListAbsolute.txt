@@ -206,3 +206,8 @@ C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\refint\We
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\WebHost.pdb
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\WebHost.genruntimeconfig.cache
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\ref\WebHost.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\WebHost.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll

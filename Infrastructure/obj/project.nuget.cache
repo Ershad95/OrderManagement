@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "c6AuZRuFRm+tSG0DK6bvSk6dAq98Y5gdpjFwLdWsRkNFkpbzhlM7kWEzbPFPFg7Ax6fG6OB12Jsi/hrmLWKvzA==",
+  "dgSpecHash": "bhrnoKLisIUgbt2uAa9lsRXKznjfKUUOzw/IAZRd5qEyhPRhsQrZEcKLVj+RuU2FqBIjFgzS2GV+mt4FWzKZgw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Ershad\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Ershad\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Ershad\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Ershad\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
@@ -12,6 +13,7 @@
     "C:\\Users\\Ershad\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
     "C:\\Users\\Ershad\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Ershad\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "C:\\Users\\Ershad\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Ershad\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.2\\microsoft.data.sqlclient.5.0.2.nupkg.sha512",
     "C:\\Users\\Ershad\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\Ershad\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.8\\microsoft.entityframeworkcore.7.0.8.nupkg.sha512",

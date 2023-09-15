@@ -35,7 +35,7 @@ public class JwtManager : IJwtManager
             {
                 new(CustomClaim.UserId, user.Guid.ToString())
             }),
-            Expires = new DateTime(2024,10,10),
+            Expires = DateTime.UtcNow.AddDays(30),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey),
                 SecurityAlgorithms.HmacSha256Signature)
         };

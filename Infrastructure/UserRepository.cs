@@ -26,4 +26,16 @@ public class UserRepository : IUserRepository
             x => x.UserName == username && x.Password == password, cancellationToken: cancellationToken);
         return user;
     }
+    
+     public async Task<bool> CheckUserNameIsAvailibleAsync(string username, CancellationToken cancellationToken)
+        {
+            var result = await _applicationDbContext.Users.AnyAsync(
+                x => x.UserName == username, cancellationToken: cancellationToken);
+            return result;
+        }
+
+    public async Task AddAsync(User user,CancellationToken cancellationToken)
+    {
+        await _applicationDbContext.Users.AddAsync(user,cancellationToken);
+    }
 }

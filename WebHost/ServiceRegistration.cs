@@ -15,6 +15,6 @@ public static class ServiceRegistration
         serviceCollection.AddScoped<IUnitOfWork, UnitOfWork>();
         serviceCollection.AddSingleton<IEmailService, FakeEmailService>();
         serviceCollection.AddSingleton<ISmsService, FakeSmsService>();
-        serviceCollection.AddSingleton<IJwtManager, JwtManager>();
+        serviceCollection.AddScoped<IJwtManager, JwtManager>();
     }
 }
