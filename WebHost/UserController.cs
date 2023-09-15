@@ -22,6 +22,8 @@ public class UserController : Controller
         _mapper = mapper;
     }
 
+    /// <summary>
+    /// ورود کاربر
     [AllowAnonymous]
     [HttpPost]
     [Route("signin")]
@@ -31,6 +33,8 @@ public class UserController : Controller
         return Ok(token);
     }
 
+    /// <summary>
+    /// ثبت کاربر جدید
     [AllowAnonymous]
     [HttpPost]
     [Route("signup")]
@@ -42,10 +46,3 @@ public class UserController : Controller
     }
 }
 
-public class SignUpVm
-{
-    public string UserName { get; set; }
-    public string Password { get; set; }
-    public string Email { get; set; }
-    public string MobileNumber { get; set; }
-}

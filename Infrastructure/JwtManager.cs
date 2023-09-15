@@ -13,20 +13,21 @@ public class JwtManager : IJwtManager
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IConfiguration _configuration;
+
     public JwtManager(IConfiguration configuration, IUnitOfWork unitOfWork)
     {
         _configuration = configuration;
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<TokenDto> CreateTokenAsync(string username,string password)
+    public async Task<TokenDto> CreateTokenAsync(string username, string password)
     {
-        var user = await _unitOfWork.UserRepository.GetAsync(username, password,CancellationToken.None);
+        var user = await _unitOfWork.UserRepository.GetAsync(username, password, CancellationToken.None);
         if (user == null)
         {
             throw new Exception("user not found");
         }
-        
+
         var tokenHandler = new JwtSecurityTokenHandler();
         var tokenKey = Encoding.UTF8.GetBytes(_configuration["JWT:Key"]!);
         var tokenDescriptor = new SecurityTokenDescriptor
@@ -41,8 +42,6 @@ public class JwtManager : IJwtManager
         };
         var token = tokenHandler.CreateToken(tokenDescriptor);
 
-
         return new TokenDto { Token = tokenHandler.WriteToken(token) };
-
     }
 }
