@@ -46,6 +46,7 @@ public class OrderRepository : IOrderRepository
             PartName = x.Part.Name,
             UserId = x.UserId,
             PartId = x.PartId,
+            ProductId = x.ProductId,
             Id = x.Id
         }).AsEnumerable();
     }
