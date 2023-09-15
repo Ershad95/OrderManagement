@@ -29,9 +29,17 @@ public class OrderRepository : IOrderRepository
 
     public async Task<IEnumerable<OrderDto>> GetAllOrdersAsync(int userId, CancellationToken cancellationToken)
     {
-        var orders = await _dbContext.Orders.Where(x => x.UserId == userId && !x.Deleted)
-            .ToListAsync(cancellationToken);
-
+        IList<Order> orders;
+        if (userId == 0)
+        {
+            orders = await _dbContext.Orders.Where(x =>!x.Deleted).ToListAsync(cancellationToken);
+        }
+        else
+        {
+            orders = await _dbContext.Orders.Where(x => x.UserId == userId && !x.Deleted)
+                .ToListAsync(cancellationToken);
+        }
+        
         return orders.Select(x => new OrderDto
         {
             ProductName = x.Product.Name,
