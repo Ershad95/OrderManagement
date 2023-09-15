@@ -1,5 +1,6 @@
 ﻿using Application.Features.AddOrder;
 using Application.Features.DeleteOrder;
+using Application.Features.SignIn;
 using Application.Features.SignUp;
 using Application.Features.UpdateOrder;
 using AutoMapper;
@@ -17,5 +18,7 @@ public class AutoMapperProfile : Profile
         CreateMap<DeleteOrderVm, DeleteOrderCommand>();
         CreateMap<SignUpVm, SignUpCommand>();
         CreateMap<SignUpCommand, User>();
+        CreateMap<SignInVm, SignInCommand>();
+        CreateMap<SignUpVm, SignUpCommand>();
     }
 }

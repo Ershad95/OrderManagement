@@ -211,3 +211,11 @@ C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Microsoft
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Serilog.AspNetCore.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Serilog.Extensions.Hosting.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Serilog.Extensions.Logging.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Serilog.Formatting.Compact.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Serilog.Settings.Configuration.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Serilog.Sinks.Debug.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\bin\Debug\net7.0\Serilog.Sinks.File.dll

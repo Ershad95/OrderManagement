@@ -2,7 +2,7 @@
 using Application.Services;
 using Infrastructure;
 
-namespace WebHost;
+namespace WebHost.Extensions;
 
 public static class ServiceRegistration
 {

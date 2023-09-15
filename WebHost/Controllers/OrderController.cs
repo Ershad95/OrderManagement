@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebHost.ViewModels;
 
-namespace WebHost;
+namespace WebHost.Controllers;
 
 [Authorize]
 [Route("/[controller]")]

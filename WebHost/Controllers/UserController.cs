@@ -1,25 +1,26 @@
 ﻿using Application.Features.SignIn;
 using Application.Features.SignUp;
-using Application.Services;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Serilog.Events;
 using WebHost.ViewModels;
+using ILogger = Serilog.ILogger;
 
-namespace WebHost;
+namespace WebHost.Controllers;
 
 public class UserController : Controller
 {
-    private readonly IJwtManager _jwtManager;
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
+    private readonly ILogger _logger;
 
-    public UserController(IJwtManager jwtManager, IMediator mediator, IMapper mapper)
+    public UserController(IMediator mediator, IMapper mapper, ILogger logger)
     {
-        _jwtManager = jwtManager;
         _mediator = mediator;
         _mapper = mapper;
+        _logger = logger;
     }
 
    
@@ -28,6 +29,7 @@ public class UserController : Controller
     [Route("signin")]
     public async Task<IActionResult> SignIn([FromBody] SignInVm signInVm, CancellationToken cancellationToken)
     {
+        _logger.Write(LogEventLevel.Information,"");
         var signInCommand = _mapper.Map<SignInCommand>(signInVm);
         var response = await _mediator.Send(signInCommand, cancellationToken);
         return Ok(response);
