@@ -14,13 +14,11 @@ public class UserController : Controller
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
-    private readonly ILogger _logger;
 
-    public UserController(IMediator mediator, IMapper mapper, ILogger logger)
+    public UserController(IMediator mediator, IMapper mapper)
     {
         _mediator = mediator;
         _mapper = mapper;
-        _logger = logger;
     }
 
    
@@ -29,7 +27,6 @@ public class UserController : Controller
     [Route("signin")]
     public async Task<IActionResult> SignIn([FromBody] SignInVm signInVm, CancellationToken cancellationToken)
     {
-        _logger.Write(LogEventLevel.Information,"");
         var signInCommand = _mapper.Map<SignInCommand>(signInVm);
         var response = await _mediator.Send(signInCommand, cancellationToken);
         return Ok(response);
