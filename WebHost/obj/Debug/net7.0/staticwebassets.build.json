@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "80jnTF4OdOW/dRfhZsLF0GwAKsj3fcSVjmNA7VouweE=",
+  "Hash": "fpOItk8h19+rH9LIZkEP6nESkUs9YZfVK65RWk9SiDY=",
   "Source": "WebHost",
   "BasePath": "_content/WebHost",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\obj\\Debug\\net7.0\\scopedcss\\bundle\\WebHost.styles.css",
-      "SourceId": "WebHost",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/WebHost",
-      "RelativePath": "WebHost.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\obj\\Debug\\net7.0\\scopedcss\\bundle\\WebHost.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\WebHost.bundle.scp.css",
-      "SourceId": "WebHost",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/WebHost",
-      "RelativePath": "WebHost.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\WebHost.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\wwwroot\\css\\site.css",
       "SourceId": "WebHost",

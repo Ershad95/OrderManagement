@@ -1,7 +1,6 @@
 using Application.Features.AddOrder;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using WebHost;
 using WebHost.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,7 +42,7 @@ app.UseSwaggerUI(options =>
     options.RoutePrefix = string.Empty;
 });
 
-app.UseSession();
+
 app.UseAuthentication();
 app.UseHttpsRedirection();
 app.UseStaticFiles();

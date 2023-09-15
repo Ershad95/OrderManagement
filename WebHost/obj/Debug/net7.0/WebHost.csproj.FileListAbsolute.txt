@@ -188,8 +188,6 @@ C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\WebHost.A
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\WebHost.AssemblyInfo.cs
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\WebHost.csproj.CoreCompileInputs.cache
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\WebHost.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\WebHost.RazorAssemblyInfo.cache
-C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\WebHost.RazorAssemblyInfo.cs
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\staticwebassets\msbuild.WebHost.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\staticwebassets\msbuild.build.WebHost.props
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.WebHost.props
@@ -197,9 +195,7 @@ C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\staticweb
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\staticwebassets.development.json
-C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\scopedcss\bundle\WebHost.styles.css
-C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\scopedcss\projectbundle\WebHost.bundle.scp.css
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\WebHost.csproj.CopyComplete
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\WebHost.dll
 C:\Users\Ershad\RiderProjects\OrderManagement\WebHost\obj\Debug\net7.0\refint\WebHost.dll

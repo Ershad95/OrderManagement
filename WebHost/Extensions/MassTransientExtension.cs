@@ -11,9 +11,9 @@ public static class MassTransientExtension
         {
             configurator.UsingInMemory((context, cfg) => { cfg.ConfigureEndpoints(context); });
 
-            configurator.AddConsumer(typeof(OrderCreated));
-            configurator.AddConsumer(typeof(OrderDeleted));
-            configurator.AddConsumer(typeof(OrderUpdated));
+            configurator.AddConsumer(typeof(Infrastructure.EventConsumer.OrderCreated));
+            configurator.AddConsumer(typeof(Infrastructure.EventConsumer.OrderDeleted));
+            configurator.AddConsumer(typeof(Infrastructure.EventConsumer.OrderUpdated));
         });
     }
 }
