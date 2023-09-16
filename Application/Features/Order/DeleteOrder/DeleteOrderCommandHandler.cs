@@ -31,19 +31,9 @@ public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, Del
         {
             var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
             
-            var order = await _unitOfWork.OrderRepository.GetOrderAsync(request.Id, currentUser.Id, cancellationToken);
-            if (order is null)
-            {
-                throw new UnauthorizedAccessException();
-            }
-            
-            var checkPart = currentUser.Parts!.Any(x => x.Id == order.PartId);
-            if (!checkPart)
-            {
-                throw new InvalidOperationException();
-            }
-            
-            order.MarkAsDeleted();
+            var order = await CheckValidation(request, cancellationToken, currentUser);
+
+            order!.MarkAsDeleted();
             await _unitOfWork.SaveAsync(cancellationToken);
 
             await _bus.Publish(new OrderDeleted(order.Id, order.ProductId, currentUser.Id), cancellationToken);
@@ -55,5 +45,22 @@ public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, Del
             _logger.LogCritical(e.Message);
             return new DeleteOrderDto(false);
         }
+    }
+
+    private async Task<Domain.Entity.Order?> CheckValidation(DeleteOrderCommand request, CancellationToken cancellationToken, Domain.Entity.User? currentUser)
+    {
+        var order = await _unitOfWork.OrderRepository.GetOrderAsync(request.Id, currentUser.Id, cancellationToken);
+        if (order is null)
+        {
+            throw new UnauthorizedAccessException();
+        }
+
+        var checkPart = currentUser.Parts!.Any(x => x.Id == order.PartId);
+        if (!checkPart)
+        {
+            throw new InvalidOperationException();
+        }
+
+        return order;
     }
 }

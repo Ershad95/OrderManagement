@@ -33,20 +33,12 @@ public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, O
     {
         try
         {
-            var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
-            if (currentUser == null)
-            {
-                throw new Exception("user can not found");
-            }
+            var currentUser = await GetCurrentUser(cancellationToken);
 
-            var checkPart = currentUser.Parts!.Any(x => x.Id == request.PartId);
-            if (!checkPart)
-            {
-                throw new InvalidOperationException($"can not add order with partId : {request.PartId}");
-            }
+            CheckValidation(request, currentUser);
 
             var order = new Domain.Entity.Order(
-                userId: currentUser.Id,
+                userId: currentUser!.Id,
                 productId: request.ProductId,
                 partId: request.PartId,
                 createdDateTime: _dateTimeService.Now);
@@ -70,5 +62,25 @@ public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, O
             _logger.LogCritical(message: exception.Message);
             return new OrderResultDto(0, null,"مشکلی در ثبت درخواست وجود دارد");
         }
+    }
+
+    private static void CheckValidation(AddOrderCommand request, Domain.Entity.User? currentUser)
+    {
+        var checkPart = currentUser!.Parts!.Any(x => x.Id == request.PartId);
+        if (!checkPart)
+        {
+            throw new InvalidOperationException($"can not add order with partId : {request.PartId}");
+        }
+    }
+
+    private async Task<Domain.Entity.User?> GetCurrentUser(CancellationToken cancellationToken)
+    {
+        var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
+        if (currentUser == null)
+        {
+            throw new Exception("user can not found");
+        }
+
+        return currentUser;
     }
 }

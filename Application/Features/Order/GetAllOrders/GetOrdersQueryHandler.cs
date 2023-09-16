@@ -20,16 +20,23 @@ public class GetOrdersQueryHandler : IRequestHandler<GetOrdersQuery, IEnumerable
 
     public async Task<IEnumerable<OrderDto>> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
     {
+        var currentUser = await GetCurrentUserAsync(cancellationToken);
+
+        var orders = await _unitOfWork.OrderRepository.GetAllOrdersAsync(
+            request.ShowAllRequest ? 0 : currentUser!.Id,
+            cancellationToken);
+
+        return orders;
+    }
+
+    private async Task<Domain.Entity.User?> GetCurrentUserAsync(CancellationToken cancellationToken)
+    {
         var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
         if (currentUser == null)
         {
             throw new Exception();
         }
-        
-        var orders = await _unitOfWork.OrderRepository.GetAllOrdersAsync(
-            request.ShowAllRequest ? 0 : currentUser.Id,
-            cancellationToken);
 
-        return orders;
+        return currentUser;
     }
 }

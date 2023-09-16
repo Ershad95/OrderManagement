@@ -31,31 +31,19 @@ public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand, Upd
     {
         try
         {
-            var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
-            if (currentUser is null)
-            {
-                throw new Exception("user not found");
-            }
+            var currentUser = await GetCurrentUserAsync(cancellationToken);
+
             var order = await _unitOfWork.OrderRepository.GetOrderAsync(
                 id: request.Id,
-                userId: currentUser.Id,
+                userId: currentUser!.Id,
                 cancellationToken: cancellationToken);
 
-            if (order is null)
-            {
-                throw new Exception("can not update this order");
-            }
-            
-            var checkPart = currentUser.Parts!.Any(x => x.Id == order.PartId);
-            if (!checkPart)
-            {
-                throw new InvalidOperationException();
-            }
+            CheckValidation(order, currentUser);
 
-            order.UpdateOrder(request.ProductId, request.PartId);
+            order!.UpdateOrder(request.ProductId, request.PartId);
             await _unitOfWork.SaveAsync(cancellationToken);
             var message = new OrderUpdated(order.Id, request.ProductId, currentUser.Id);
-            
+
             await _bus.Publish(message, cancellationToken);
 
             return new UpdateOrderDto(true);
@@ -66,5 +54,29 @@ public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand, Upd
             return new UpdateOrderDto(false);
         }
     }
-}
 
+    private static void CheckValidation(Domain.Entity.Order? order, Domain.Entity.User currentUser)
+    {
+        if (order is null)
+        {
+            throw new Exception("can not update this order");
+        }
+
+        var checkPart = currentUser.Parts!.Any(x => x.Id == order.PartId);
+        if (!checkPart)
+        {
+            throw new InvalidOperationException();
+        }
+    }
+
+    private async Task<Domain.Entity.User?> GetCurrentUserAsync(CancellationToken cancellationToken)
+    {
+        var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
+        if (currentUser is null)
+        {
+            throw new Exception("user not found");
+        }
+
+        return currentUser;
+    }
+}
