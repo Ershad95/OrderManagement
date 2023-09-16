@@ -34,7 +34,7 @@ public class SignUpCommandHandler : IRequestHandler<SignUpCommand, TokenDto>
         await _unitOfWork.UserRepository.AddAsync(user, cancellationToken);
         await _unitOfWork.SaveAsync(cancellationToken);
         
-        var token = await _jwtManager.CreateTokenAsync(request.UserName, request.Password, cancellationToken);
+        var token = await _jwtManager.GetTokenAsync(request.UserName, request.Password, cancellationToken);
         return token;
     }
 }

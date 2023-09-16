@@ -4,6 +4,7 @@ using Application.Features.AddOrder;
 using Infrastructure;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using WebHost;
 using WebHost.Extensions;
 
@@ -28,9 +29,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddTransient<CheckTokenMiddleware>();
 
-// builder.Services.AddLogging();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.ConfigurationOptions = new ConfigurationOptions()
+    {
+        EndPoints = { builder.Configuration["Redis"] },
+        AllowAdmin = true
+    };
+});
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -46,7 +55,7 @@ app.UseSwaggerUI(options =>
     options.RoutePrefix = string.Empty;
 });
 app.ApiExceptionHandling();
-
+app.UseMiddleware<CheckTokenMiddleware>();
 app.UseAuthentication();
 app.UseHttpsRedirection();
 app.UseStaticFiles();

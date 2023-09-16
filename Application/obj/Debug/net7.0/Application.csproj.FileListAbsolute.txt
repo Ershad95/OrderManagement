@@ -44,3 +44,4 @@ C:\Users\Ershad\RiderProjects\OrderManagement\Application\obj\Debug\net7.0\Appli
 C:\Users\Ershad\RiderProjects\OrderManagement\Application\obj\Debug\net7.0\refint\Application.dll
 C:\Users\Ershad\RiderProjects\OrderManagement\Application\obj\Debug\net7.0\Application.pdb
 C:\Users\Ershad\RiderProjects\OrderManagement\Application\obj\Debug\net7.0\ref\Application.dll
+C:\Users\Ershad\RiderProjects\OrderManagement\Application\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll

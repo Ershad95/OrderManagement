@@ -14,6 +14,6 @@ public class SignInCommandHandler : IRequestHandler<SignInCommand,TokenDto>
     }
     public async Task<TokenDto> Handle(SignInCommand request, CancellationToken cancellationToken)
     {
-        return await _jwtManager.CreateTokenAsync(request.UserName, request.Password,cancellationToken);
+        return await _jwtManager.GetTokenAsync(request.UserName, request.Password,cancellationToken);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Application.Features.SignIn;
+﻿using Application.Features.LogOut;
+using Application.Features.SignIn;
 using Application.Features.SignUp;
 using AutoMapper;
 using MediatR;
@@ -21,7 +22,7 @@ public class UserController : Controller
         _mapper = mapper;
     }
 
-   
+
     [AllowAnonymous]
     [HttpPost]
     [Route("signin")]
@@ -40,5 +41,13 @@ public class UserController : Controller
         var addUserCommand = _mapper.Map<SignUpCommand>(signUpVm);
         var response = await _mediator.Send(addUserCommand, cancellationToken);
         return Ok(response);
+    }
+
+    [HttpGet]
+    [Route("logout")]
+    public async Task<IActionResult> LogOut()
+    {
+        await _mediator.Send(new LogoutCommand());
+        return Ok();
     }
 }

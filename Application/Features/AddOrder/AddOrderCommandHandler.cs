@@ -43,7 +43,7 @@ public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, O
             var checkPart = currentUser.Parts!.Any(x => x.Id == request.PartId);
             if (!checkPart)
             {
-                throw new InvalidOperationException($"user can not add order with partId : {request.PartId}");
+                throw new InvalidOperationException($"can not add order with partId : {request.PartId}");
             }
 
             var order = new Order(

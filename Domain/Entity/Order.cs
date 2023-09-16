@@ -1,5 +1,4 @@
 ﻿namespace Domain.Entity;
-
 public class Order : BaseEntity
 {
     public int UserId { get; private set; }

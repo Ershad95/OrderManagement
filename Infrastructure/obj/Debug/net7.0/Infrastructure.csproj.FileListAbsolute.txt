@@ -30,7 +30,6 @@ C:\Users\Ershad\RiderProjects\OrderManagement\Infrastructure\bin\Debug\net7.0\In
 C:\Users\Ershad\RiderProjects\OrderManagement\Infrastructure\bin\Debug\net7.0\Application.dll
 C:\Users\Ershad\RiderProjects\OrderManagement\Infrastructure\bin\Debug\net7.0\Domain.dll
 C:\Users\Ershad\RiderProjects\OrderManagement\Infrastructure\bin\Debug\net7.0\Microsoft.AspNetCore.Http.Abstractions.dll
-C:\Users\Ershad\RiderProjects\OrderManagement\Infrastructure\bin\Debug\net7.0\System.IO.Pipelines.dll
 C:\Users\Ershad\RiderProjects\OrderManagement\Infrastructure\bin\Debug\net7.0\Microsoft.Extensions.Features.dll
 C:\Users\Ershad\RiderProjects\OrderManagement\Infrastructure\bin\Debug\net7.0\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\Ershad\RiderProjects\OrderManagement\Infrastructure\bin\Debug\net7.0\Microsoft.Net.Http.Headers.dll
