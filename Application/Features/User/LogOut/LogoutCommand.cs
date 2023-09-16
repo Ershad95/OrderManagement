@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Application.Features.LogOut;
+namespace Application.Features.User.LogOut;
 
 public class LogoutCommand:IRequest
 {

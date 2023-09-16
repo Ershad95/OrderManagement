@@ -2,10 +2,9 @@
 using Application.Repository;
 using Application.Services;
 using AutoMapper;
-using Domain.Entity;
 using MediatR;
 
-namespace Application.Features.SignUp;
+namespace Application.Features.User.SignUp;
 
 public class SignUpCommandHandler : IRequestHandler<SignUpCommand, TokenDto>
 {
@@ -30,7 +29,7 @@ public class SignUpCommandHandler : IRequestHandler<SignUpCommand, TokenDto>
             throw new Exception("username is not valid,already selected by other user");
         }
 
-        var user = _mapper.Map<User>(request);
+        var user = _mapper.Map<Domain.Entity.User>(request);
         await _unitOfWork.UserRepository.AddAsync(user, cancellationToken);
         await _unitOfWork.SaveAsync(cancellationToken);
         

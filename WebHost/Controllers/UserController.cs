@@ -1,6 +1,6 @@
-﻿using Application.Features.LogOut;
-using Application.Features.SignIn;
-using Application.Features.SignUp;
+﻿using Application.Features.User.LogOut;
+using Application.Features.User.SignIn;
+using Application.Features.User.SignUp;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

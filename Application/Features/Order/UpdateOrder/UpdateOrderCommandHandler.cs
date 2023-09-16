@@ -1,12 +1,11 @@
 ﻿using Application.Events;
 using Application.Repository;
 using Application.Services;
-using Domain.Entity;
 using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Features.UpdateOrder;
+namespace Application.Features.Order.UpdateOrder;
 
 public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand, UpdateOrderDto>
 {

@@ -1,12 +1,11 @@
 ﻿using Application.Events;
 using Application.Repository;
 using Application.Services;
-using Domain.Entity;
 using MassTransit;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Features.DeleteOrder;
+namespace Application.Features.Order.DeleteOrder;
 
 public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, DeleteOrderDto>
 {

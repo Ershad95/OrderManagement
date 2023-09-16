@@ -2,11 +2,10 @@
 using Application.Events;
 using Application.Repository;
 using Application.Services;
-using Domain.Entity;
 using MassTransit;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Features.AddOrder;
+namespace Application.Features.Order.AddOrder;
 
 public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, OrderResultDto>
 {
@@ -46,7 +45,7 @@ public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, O
                 throw new InvalidOperationException($"can not add order with partId : {request.PartId}");
             }
 
-            var order = new Order(
+            var order = new Domain.Entity.Order(
                 userId: currentUser.Id,
                 productId: request.ProductId,
                 partId: request.PartId,

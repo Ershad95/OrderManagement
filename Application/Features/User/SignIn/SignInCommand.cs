@@ -1,7 +1,7 @@
 ﻿using Application.Dto;
 using MediatR;
 
-namespace Application.Features.SignIn;
+namespace Application.Features.User.SignIn;
 
 public class SignInCommand : IRequest<TokenDto>
 {

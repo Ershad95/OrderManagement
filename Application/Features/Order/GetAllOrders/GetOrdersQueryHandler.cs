@@ -1,11 +1,9 @@
 ﻿using Application.Dto;
-using Application.Features.AddOrder;
 using Application.Repository;
 using Application.Services;
-using Domain.Entity;
 using MediatR;
 
-namespace Application.Features.GetAllOrders;
+namespace Application.Features.Order.GetAllOrders;
 
 public class GetOrdersQueryHandler : IRequestHandler<GetOrdersQuery, IEnumerable<OrderDto>>
 {

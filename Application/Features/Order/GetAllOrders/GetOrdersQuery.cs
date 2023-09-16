@@ -1,8 +1,7 @@
 ﻿using Application.Dto;
-using Domain.Entity;
 using MediatR;
 
-namespace Application.Features.GetAllOrders;
+namespace Application.Features.Order.GetAllOrders;
 
 public class GetOrdersQuery : IRequest<IEnumerable<OrderDto>>
 {

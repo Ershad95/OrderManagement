@@ -1,7 +1,7 @@
-﻿using Application.Features.AddOrder;
-using Application.Features.DeleteOrder;
-using Application.Features.GetAllOrders;
-using Application.Features.UpdateOrder;
+﻿using Application.Features.Order.AddOrder;
+using Application.Features.Order.DeleteOrder;
+using Application.Features.Order.GetAllOrders;
+using Application.Features.Order.UpdateOrder;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

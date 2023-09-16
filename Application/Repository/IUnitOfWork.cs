@@ -1,6 +1,4 @@
-﻿using Application.Features.AddOrder;
-
-namespace Application.Repository;
+﻿namespace Application.Repository;
 
 public interface IUnitOfWork
 {

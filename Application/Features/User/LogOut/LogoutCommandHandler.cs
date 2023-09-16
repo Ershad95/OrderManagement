@@ -1,9 +1,8 @@
-﻿using Application.Services;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Distributed;
 
-namespace Application.Features.LogOut;
+namespace Application.Features.User.LogOut;
 
 public class LogoutCommandHandler : IRequestHandler<LogoutCommand>
 {

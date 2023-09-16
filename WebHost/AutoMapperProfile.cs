@@ -1,8 +1,8 @@
-﻿using Application.Features.AddOrder;
-using Application.Features.DeleteOrder;
-using Application.Features.SignIn;
-using Application.Features.SignUp;
-using Application.Features.UpdateOrder;
+﻿using Application.Features.Order.AddOrder;
+using Application.Features.Order.DeleteOrder;
+using Application.Features.Order.UpdateOrder;
+using Application.Features.User.SignIn;
+using Application.Features.User.SignUp;
 using AutoMapper;
 using Domain.Entity;
 using WebHost.ViewModels;

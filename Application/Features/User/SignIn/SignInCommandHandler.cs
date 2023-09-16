@@ -2,7 +2,7 @@
 using Application.Services;
 using MediatR;
 
-namespace Application.Features.SignIn;
+namespace Application.Features.User.SignIn;
 
 public class SignInCommandHandler : IRequestHandler<SignInCommand,TokenDto>
 {

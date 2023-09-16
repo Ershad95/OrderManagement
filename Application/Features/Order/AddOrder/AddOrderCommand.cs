@@ -1,8 +1,7 @@
 ﻿using Application.Dto;
-using Domain.Entity;
 using MediatR;
 
-namespace Application.Features.AddOrder;
+namespace Application.Features.Order.AddOrder;
 
 
 
