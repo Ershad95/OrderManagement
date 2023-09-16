@@ -28,12 +28,7 @@ public class OrderController : ControllerBase
     {
         var addedOrderCommand = _mapper.Map<AddOrderCommand>(addOrderVm);
         var response = await _mediator.Send(addedOrderCommand, cancellationToken);
-        if (response.OrderId > 0)
-        {
-            return Ok(response);
-        }
-
-        return BadRequest(response);
+        return Ok(response);
     }
 
     [HttpPut]
