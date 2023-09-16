@@ -6,6 +6,7 @@ namespace WebHost.Extensions;
 
 public static class CustomExceptionHandling
 {
+    private const string DefaultErrorMessage = "Internal Server Error.";
     public static void ExceptionHandling(this WebApplication app)
     {
         app.UseExceptionHandler(appError =>
@@ -21,7 +22,7 @@ public static class CustomExceptionHandling
                     var errorDetails = new
                     {
                         Message = string.IsNullOrWhiteSpace(contextFeature.Error.Message)
-                            ? "Internal Server Error."
+                            ? DefaultErrorMessage
                             : contextFeature.Error.Message
                     };
                     await context.Response.WriteAsync(JsonSerializer.Serialize(errorDetails));
