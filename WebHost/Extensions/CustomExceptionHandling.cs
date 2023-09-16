@@ -7,7 +7,7 @@ namespace WebHost.Extensions;
 public static class CustomExceptionHandling
 {
     private const string DefaultErrorMessage = "Internal Server Error.";
-    public static void ExceptionHandling(this WebApplication app)
+    public static void ApiExceptionHandling(this WebApplication app)
     {
         app.UseExceptionHandler(appError =>
         {
