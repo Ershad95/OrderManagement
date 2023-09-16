@@ -5,9 +5,7 @@ using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Serilog.Events;
 using WebHost.ViewModels;
-using ILogger = Serilog.ILogger;
 
 namespace WebHost.Controllers;
 
@@ -46,9 +44,9 @@ public class UserController : Controller
     [Authorize]
     [HttpGet]
     [Route("logout")]
-    public async Task<IActionResult> LogOut()
+    public async Task<IActionResult> LogOut(CancellationToken cancellationToken)
     {
-        await _mediator.Send(new LogoutCommand());
+        await _mediator.Send(new LogoutCommand(),cancellationToken);
         return Ok();
     }
 }
