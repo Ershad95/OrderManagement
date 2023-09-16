@@ -31,19 +31,29 @@ public class OrderController : ControllerBase
         return Ok(response);
     }
 
-    [HttpPut]
-    public async Task<IActionResult> UpdateOrder([FromBody] UpdateOrderVm updateOrderVm,
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateOrder([FromBody] UpdateOrderVm updateOrderVm,[FromRoute]int id,
         CancellationToken cancellationToken)
     {
+        if (id != updateOrderVm.Id)
+        {
+            return BadRequest();
+        }
+        
         var updateOrderCommand = _mapper.Map<UpdateOrderCommand>(updateOrderVm);
         var response = await _mediator.Send(updateOrderCommand, cancellationToken);
         return Ok(response);
     }
 
-    [HttpDelete]
-    public async Task<IActionResult> DeleteOrder([FromBody] DeleteOrderVm deleteOrderVm,
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteOrder([FromBody] DeleteOrderVm deleteOrderVm,[FromRoute]int id,
         CancellationToken cancellationToken)
     {
+        if (id != deleteOrderVm.Id)
+        {
+            return BadRequest();
+        }
+        
         var deleteOrderCommand = _mapper.Map<DeleteOrderCommand>(deleteOrderVm);
         var response = await _mediator.Send(deleteOrderCommand, cancellationToken);
         return Ok(response);
