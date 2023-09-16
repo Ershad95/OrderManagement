@@ -10,18 +10,18 @@ namespace Application.Features.Order.DeleteOrder;
 public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, DeleteOrderDto>
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IUserService _userService;
+    private readonly ICurrentUserService _currentUserService;
     private readonly IBus _bus;
     private readonly ILogger<DeleteOrderCommandHandler> _logger;
 
     public DeleteOrderCommandHandler(IUnitOfWork unitOfWork,
         ILogger<DeleteOrderCommandHandler> logger,
-        IUserService userService,
+        ICurrentUserService currentUserService,
         IBus bus)
     {
         _unitOfWork = unitOfWork;
         _logger = logger;
-        _userService = userService;
+        _currentUserService = currentUserService;
         _bus = bus;
     }
 
@@ -29,7 +29,7 @@ public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, Del
     {
         try
         {
-            var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
+            var currentUser = await _currentUserService.GetCurrentUserAsync(cancellationToken);
             
             var order = await CheckValidation(request, cancellationToken, currentUser);
 
@@ -47,9 +47,10 @@ public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, Del
         }
     }
 
-    private async Task<Domain.Entity.Order?> CheckValidation(DeleteOrderCommand request, CancellationToken cancellationToken, Domain.Entity.User? currentUser)
+    private async Task<Domain.Entity.Order?> CheckValidation(DeleteOrderCommand request, CancellationToken cancellationToken, 
+        Domain.Entity.User? currentUser)
     {
-        var order = await _unitOfWork.OrderRepository.GetOrderAsync(request.Id, currentUser.Id, cancellationToken);
+        var order = await _unitOfWork.OrderRepository.GetOrderAsync(request.Id, currentUser!.Id, cancellationToken);
         if (order is null)
         {
             throw new UnauthorizedAccessException();

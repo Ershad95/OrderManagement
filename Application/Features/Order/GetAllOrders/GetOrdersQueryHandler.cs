@@ -8,14 +8,14 @@ namespace Application.Features.Order.GetAllOrders;
 public class GetOrdersQueryHandler : IRequestHandler<GetOrdersQuery, IEnumerable<OrderDto>>
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IUserService _userService;
+    private readonly ICurrentUserService _currentUserService;
 
     public GetOrdersQueryHandler(
         IUnitOfWork unitOfWork,
-        IUserService userService)
+        ICurrentUserService currentUserService)
     {
         _unitOfWork = unitOfWork;
-        _userService = userService;
+        _currentUserService = currentUserService;
     }
 
     public async Task<IEnumerable<OrderDto>> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
@@ -31,7 +31,7 @@ public class GetOrdersQueryHandler : IRequestHandler<GetOrdersQuery, IEnumerable
 
     private async Task<Domain.Entity.User?> GetCurrentUserAsync(CancellationToken cancellationToken)
     {
-        var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
+        var currentUser = await _currentUserService.GetCurrentUserAsync(cancellationToken);
         if (currentUser == null)
         {
             throw new Exception();

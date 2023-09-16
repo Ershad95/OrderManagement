@@ -10,7 +10,7 @@ using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Infrastructure;
+namespace Infrastructure.Services;
 
 public class JwtManager : IJwtManager
 {
@@ -47,7 +47,7 @@ public class JwtManager : IJwtManager
     }
 
 
-    public async Task<Guid?> GetUserIdFromToken(string token)
+    public Task<Guid?> GetUserIdFromToken(string token)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(_configuration["JWT:Key"]!);
@@ -66,11 +66,11 @@ public class JwtManager : IJwtManager
             var jwtToken = (JwtSecurityToken)validatedToken;
             var guid = Guid.Parse(jwtToken.Claims.First(x => x.Type == CustomClaim.UserGuid).Value);
 
-            return guid;
+            return Task.FromResult<Guid?>(guid);
         }
         catch
         {
-            return null;
+            return Task.FromResult<Guid?>(null);
         }
     }
 
@@ -105,7 +105,7 @@ public class JwtManager : IJwtManager
         var user = await _unitOfWork.UserRepository.GetAsync(username: username, password: password,
             cancellationToken: cancellationToken);
 
-        if (user == null)
+        if (user is null)
         {
             throw new Exception(message: "user not found");
         }

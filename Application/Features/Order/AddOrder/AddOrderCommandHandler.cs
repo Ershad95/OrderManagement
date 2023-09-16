@@ -9,20 +9,20 @@ namespace Application.Features.Order.AddOrder;
 
 public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, OrderResultDto>
 {
-    private readonly IUserService _userService;
+    private readonly ICurrentUserService _currentUserService;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IDateTimeService _dateTimeService;
     private readonly ILogger<AddOrderCommandHandler> _logger;
     private readonly IBus _bus;
 
     public AddOrderCommandHandler(
-        IUserService userService,
+        ICurrentUserService currentUserService,
         IDateTimeService dateTimeService,
         IUnitOfWork unitOfWork,
         ILogger<AddOrderCommandHandler> logger,
         IBus bus)
     {
-        _userService = userService;
+        _currentUserService = currentUserService;
         _unitOfWork = unitOfWork;
         _logger = logger;
         _bus = bus;
@@ -75,7 +75,7 @@ public class AddOrderCommandHandler : MediatR.IRequestHandler<AddOrderCommand, O
 
     private async Task<Domain.Entity.User?> GetCurrentUser(CancellationToken cancellationToken)
     {
-        var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
+        var currentUser = await _currentUserService.GetCurrentUserAsync(cancellationToken);
         if (currentUser == null)
         {
             throw new Exception("user can not found");

@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Http;
 
 namespace Application.Services;
 
-public class UserService : IUserService
+public class CurrentUserService : ICurrentUserService
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IUserRepository _userRepository;
 
-    public UserService(IHttpContextAccessor httpContextAccessor, IUserRepository userRepository)
+    public CurrentUserService(IHttpContextAccessor httpContextAccessor, IUserRepository userRepository)
     {
         _httpContextAccessor = httpContextAccessor;
         _userRepository = userRepository;

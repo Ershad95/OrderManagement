@@ -2,7 +2,7 @@
 using Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure;
+namespace Infrastructure.Repository;
 
 public class UserRepository : IUserRepository
 {

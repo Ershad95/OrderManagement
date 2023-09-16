@@ -2,6 +2,7 @@
 using Application.Services;
 using Infrastructure;
 using Infrastructure.Repository;
+using Infrastructure.Services;
 
 namespace WebHost.Extensions;
 
@@ -9,7 +10,7 @@ public static class ServiceRegistration
 {
     public static void CustomServiceRegistration(this IServiceCollection serviceCollection)
     {
-        serviceCollection.AddScoped<IUserService, UserService>();
+        serviceCollection.AddScoped<ICurrentUserService, CurrentUserService>();
         serviceCollection.AddScoped<IDateTimeService, DateTimeService>();
         serviceCollection.AddScoped<IUserRepository, UserRepository>();
         serviceCollection.AddScoped<IOrderRepository, OrderRepository>();

@@ -10,7 +10,7 @@ namespace Application.Features.Order.UpdateOrder;
 public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand, UpdateOrderDto>
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IUserService _userService;
+    private readonly ICurrentUserService _currentUserService;
     private readonly ILogger<UpdateOrderCommandHandler> _logger;
     private readonly IBus _bus;
 
@@ -18,12 +18,12 @@ public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand, Upd
     public UpdateOrderCommandHandler(
         IUnitOfWork unitOfWork,
         ILogger<UpdateOrderCommandHandler> logger,
-        IUserService userService,
+        ICurrentUserService currentUserService,
         IBus bus)
     {
         _unitOfWork = unitOfWork;
         _logger = logger;
-        _userService = userService;
+        _currentUserService = currentUserService;
         _bus = bus;
     }
 
@@ -71,7 +71,7 @@ public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand, Upd
 
     private async Task<Domain.Entity.User?> GetCurrentUserAsync(CancellationToken cancellationToken)
     {
-        var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
+        var currentUser = await _currentUserService.GetCurrentUserAsync(cancellationToken);
         if (currentUser is null)
         {
             throw new Exception("user not found");

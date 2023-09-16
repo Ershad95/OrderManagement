@@ -2,7 +2,7 @@
 
 namespace Application.Services;
 
-public interface IUserService
+public interface ICurrentUserService
 {
     Task<User?> GetCurrentUserAsync(CancellationToken cancellationToken);
 }
