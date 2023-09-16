@@ -2,9 +2,9 @@
 
 namespace Infrastructure.EventConsumer;
 
-public class OrderUpdated : IConsumer<OrderUpdated>
+public class OrderUpdated : IConsumer<Application.Events.OrderUpdated>
 {
-    public Task Consume(ConsumeContext<OrderUpdated> context)
+    public Task Consume(ConsumeContext<Application.Events.OrderUpdated> context)
     {
         return Task.CompletedTask;
     }

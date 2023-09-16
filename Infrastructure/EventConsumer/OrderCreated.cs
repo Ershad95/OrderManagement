@@ -23,6 +23,7 @@ public class OrderCreated : IConsumer<Application.Events.OrderCreated>
     {
         await _emailService.SendAsync(context.Message.Email, context.CancellationToken);
         await _smsService.SendAsync(context.Message.MobileNumber, context.CancellationToken);
+        
         _logger.LogInformation("notification sent to user");
     }
 }
