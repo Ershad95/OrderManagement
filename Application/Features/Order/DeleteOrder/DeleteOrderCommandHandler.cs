@@ -30,13 +30,13 @@ public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, Del
         try
         {
             var currentUser = await _currentUserService.GetCurrentUserAsync(cancellationToken);
-            
-            var order = await CheckValidation(request, cancellationToken, currentUser);
+            var order = await GetOrderAsync(request.Id, currentUser!.Id, cancellationToken);
+            CheckValidation(currentUser, order.PartId);
 
             order!.MarkAsDeleted();
             await _unitOfWork.SaveAsync(cancellationToken);
 
-            await _bus.Publish(new OrderDeleted(order.Id, order.ProductId, currentUser.Id), cancellationToken);
+            await _bus.Publish(new OrderDeleted(order.Id, order.ProductId, currentUser!.Id), cancellationToken);
             _logger.LogInformation("Order Deleted");
 
             return new DeleteOrderDto(true);
@@ -48,21 +48,23 @@ public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, Del
         }
     }
 
-    private async Task<Domain.Entity.Order?> CheckValidation(DeleteOrderCommand request, CancellationToken cancellationToken, 
-        Domain.Entity.User? currentUser)
+    private async Task<Domain.Entity.Order> GetOrderAsync(int orderId, int userId, CancellationToken cancellationToken)
     {
-        var order = await _unitOfWork.OrderRepository.GetOrderAsync(request.Id, currentUser!.Id, cancellationToken);
+        var order = await _unitOfWork.OrderRepository.GetOrderAsync(orderId, userId, cancellationToken);
         if (order is null)
         {
-            throw new UnauthorizedAccessException();
+            throw new Exception("can not delete order");
         }
 
-        var checkPart = currentUser.Parts!.Any(x => x.Id == order.PartId);
+        return order;
+    }
+
+    private static void CheckValidation(Domain.Entity.User? currentUser, int partId)
+    {
+        var checkPart = currentUser!.Parts!.Any(x => x.Id == partId);
         if (!checkPart)
         {
             throw new InvalidOperationException();
         }
-
-        return order;
     }
 }
