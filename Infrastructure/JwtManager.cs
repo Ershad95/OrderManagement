@@ -63,7 +63,7 @@ public class JwtManager : IJwtManager
                 ValidateIssuer = false,
                 ValidateAudience = false,
                 ClockSkew = TimeSpan.Zero
-            }, out SecurityToken validatedToken);
+            }, out var validatedToken);
 
             var jwtToken = (JwtSecurityToken)validatedToken;
             var guid = Guid.Parse(jwtToken.Claims.First(x => x.Type == CustomClaim.UserGuid).Value);
@@ -72,7 +72,6 @@ public class JwtManager : IJwtManager
         }
         catch
         {
-            // return null if validation fails
             return null;
         }
     }

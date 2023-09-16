@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
 using WebHost;
 using WebHost.Extensions;
+using WebHost.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 

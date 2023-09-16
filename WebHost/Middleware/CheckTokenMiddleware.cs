@@ -2,7 +2,7 @@
 using Application.Services;
 using Microsoft.Extensions.Caching.Distributed;
 
-namespace WebHost;
+namespace WebHost.Middleware;
 
 public class CheckTokenMiddleware : IMiddleware
 {
@@ -17,23 +17,30 @@ public class CheckTokenMiddleware : IMiddleware
     
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
-        var auth = context.Request.Headers["Authorization"];
-        if (!string.IsNullOrWhiteSpace(auth))
+        try
         {
-            var pureToken = auth.ToString().Split(" ")[1];
-            var guid = await _jwtManager.GetUserIdFromToken(pureToken);
-            if (guid is null)
+            var auth = context.Request.Headers["Authorization"];
+            if (!string.IsNullOrWhiteSpace(auth))
             {
-                await SetResponseAsUnauthorized(context);
-                return;
+                var pureToken = auth.ToString().Split(" ")[1];
+                var guid = await _jwtManager.GetUserIdFromToken(pureToken);
+                if (guid is null)
+                {
+                    await SetResponseAsUnauthorized(context);
+                    return;
+                }
+                
+                var result = await _distributedCache.GetAsync($"user_{guid}", context.RequestAborted);
+                if (result is null)
+                {
+                    await SetResponseAsUnauthorized(context);
+                    return;
+                }
             }
-
-            var result = await _distributedCache.GetAsync($"user_{guid}", context.RequestAborted);
-            if (result is null)
-            {
-                await SetResponseAsUnauthorized(context);
-                return;
-            }
+        }
+        catch (Exception)
+        {
+            await SetResponseAsUnauthorized(context);
         }
         await next.Invoke(context);
     }
