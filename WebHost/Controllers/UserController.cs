@@ -43,6 +43,7 @@ public class UserController : Controller
         return Ok(response);
     }
 
+    [Authorize]
     [HttpGet]
     [Route("logout")]
     public async Task<IActionResult> LogOut()
