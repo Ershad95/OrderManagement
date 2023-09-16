@@ -3275,15 +3275,31 @@
           "bin/placeholder/Domain.dll": {}
         }
       },
-      "Infrastructure/1.0.0": {
+      "Infastraucture.EfCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.8",
+          "Microsoft.EntityFrameworkCore.Proxies": "7.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.8",
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "Microsoft.Extensions.Configuration.FileExtensions": "7.0.0",
+          "Microsoft.Extensions.Configuration.Json": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infastraucture.EfCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infastraucture.EfCore.dll": {}
+        }
+      },
+      "Infrastructure.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Application": "1.0.0",
           "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.8",
-          "Microsoft.EntityFrameworkCore.Proxies": "7.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.8",
           "Microsoft.Extensions.Caching.StackExchangeRedis": "7.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "7.0.0",
           "Microsoft.Extensions.Configuration.Json": "7.0.0",
@@ -3292,10 +3308,10 @@
           "System.IdentityModel.Tokens.Jwt": "7.0.0"
         },
         "compile": {
-          "bin/placeholder/Infrastructure.dll": {}
+          "bin/placeholder/Infrastructure.Services.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Infrastructure.dll": {}
+          "bin/placeholder/Infrastructure.Services.dll": {}
         }
       }
     }
@@ -9769,20 +9785,25 @@
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
     },
-    "Infrastructure/1.0.0": {
+    "Infastraucture.EfCore/1.0.0": {
       "type": "project",
-      "path": "../Infrastructure/Infrastructure.csproj",
-      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
+      "path": "../Infastraucture.EfCore/Infastraucture.EfCore.csproj",
+      "msbuildProject": "../Infastraucture.EfCore/Infastraucture.EfCore.csproj"
+    },
+    "Infrastructure.Services/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure.Services/Infrastructure.Services.csproj",
+      "msbuildProject": "../Infrastructure.Services/Infrastructure.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
-      "Domain >= 1.0.0",
       "FluentValidation >= 11.7.1",
       "FluentValidation.DependencyInjectionExtensions >= 11.7.1",
-      "Infrastructure >= 1.0.0",
+      "Infastraucture.EfCore >= 1.0.0",
+      "Infrastructure.Services >= 1.0.0",
       "MassTransit >= 8.1.0",
       "MassTransit.Extensions.DependencyInjection >= 7.3.1",
       "MediatR >= 12.1.1",
@@ -9826,11 +9847,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj"
+            "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj": {
+              "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj"
             },
-            "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj": {
+              "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj"
             }
           }
         }

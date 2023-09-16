@@ -1,11 +1,7 @@
-using System.Net;
-using System.Text.Json;
 using Application.Features.Order.AddOrder;
 using Infrastructure;
-using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
-using WebHost;
 using WebHost.Extensions;
 using WebHost.Middleware;
 

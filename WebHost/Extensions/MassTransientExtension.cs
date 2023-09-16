@@ -1,5 +1,4 @@
-﻿using Application.Events;
-using MassTransit;
+﻿using MassTransit;
 
 namespace WebHost.Extensions;
 
@@ -11,9 +10,9 @@ public static class MassTransientExtension
         {
             configurator.UsingInMemory((context, cfg) => { cfg.ConfigureEndpoints(context); });
 
-            configurator.AddConsumer(typeof(Infrastructure.EventConsumer.OrderCreated));
-            configurator.AddConsumer(typeof(Infrastructure.EventConsumer.OrderDeleted));
-            configurator.AddConsumer(typeof(Infrastructure.EventConsumer.OrderUpdated));
+            configurator.AddConsumer(typeof(Infrastructure.Services.EventConsumer.OrderCreated));
+            configurator.AddConsumer(typeof(Infrastructure.Services.EventConsumer.OrderDeleted));
+            configurator.AddConsumer(typeof(Infrastructure.Services.EventConsumer.OrderUpdated));
         });
     }
 }

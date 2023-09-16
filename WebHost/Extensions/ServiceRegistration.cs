@@ -1,8 +1,8 @@
 ﻿using Application.Repository;
 using Application.Services;
-using Infrastructure;
 using Infrastructure.Repository;
 using Infrastructure.Services;
+using Infrastructure.Services.Services;
 
 namespace WebHost.Extensions;
 

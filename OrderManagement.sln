@@ -6,7 +6,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{C9FCF843-581D-49B2-9D66-1EE953EEEA52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{30FA45E6-A18D-4F3C-AF98-4EF6941459E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Services", "Infrastructure.Services\Infrastructure.Services.csproj", "{30FA45E6-A18D-4F3C-AF98-4EF6941459E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infastraucture.EfCore", "Infastraucture.EfCore\Infastraucture.EfCore.csproj", "{AE69E6E5-2F17-4D3C-810C-140D6B70EDE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastrcuture", "Infrastrcuture", "{EBFA12F1-579A-4B6A-B95C-DDD0FF28557C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +34,13 @@ Global
 		{30FA45E6-A18D-4F3C-AF98-4EF6941459E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30FA45E6-A18D-4F3C-AF98-4EF6941459E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30FA45E6-A18D-4F3C-AF98-4EF6941459E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE69E6E5-2F17-4D3C-810C-140D6B70EDE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE69E6E5-2F17-4D3C-810C-140D6B70EDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE69E6E5-2F17-4D3C-810C-140D6B70EDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE69E6E5-2F17-4D3C-810C-140D6B70EDE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AE69E6E5-2F17-4D3C-810C-140D6B70EDE4} = {EBFA12F1-579A-4B6A-B95C-DDD0FF28557C}
+		{30FA45E6-A18D-4F3C-AF98-4EF6941459E8} = {EBFA12F1-579A-4B6A-B95C-DDD0FF28557C}
 	EndGlobalSection
 EndGlobal
