@@ -43,7 +43,8 @@ public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand, Upd
             order!.UpdateOrder(request.ProductId, request.PartId);
             await _unitOfWork.SaveAsync(cancellationToken);
             var message = new OrderUpdated(order.Id, request.ProductId, currentUser.Id);
-
+            
+            _logger.LogInformation("Order Updated");
             await _bus.Publish(message, cancellationToken);
 
             return new UpdateOrderDto(true);

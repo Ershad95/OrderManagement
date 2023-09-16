@@ -37,6 +37,7 @@ public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, Del
             await _unitOfWork.SaveAsync(cancellationToken);
 
             await _bus.Publish(new OrderDeleted(order.Id, order.ProductId, currentUser.Id), cancellationToken);
+            _logger.LogInformation("Order Deleted");
 
             return new DeleteOrderDto(true);
         }

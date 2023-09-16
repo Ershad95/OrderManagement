@@ -13,14 +13,13 @@ public class UserController : Controller
 {
     private readonly IMediator _mediator;
     private readonly IMapper _mapper;
-
+    
     public UserController(IMediator mediator, IMapper mapper)
     {
         _mediator = mediator;
         _mapper = mapper;
     }
-
-
+    
     [AllowAnonymous]
     [HttpPost]
     [Route("signin")]
@@ -46,7 +45,7 @@ public class UserController : Controller
     [Route("logout")]
     public async Task<IActionResult> LogOut(CancellationToken cancellationToken)
     {
-        await _mediator.Send(new LogoutCommand(),cancellationToken);
+        await _mediator.Send(new LogoutCommand(), cancellationToken);
         return Ok();
     }
 }

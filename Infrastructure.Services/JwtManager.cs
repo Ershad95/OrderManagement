@@ -10,7 +10,7 @@ using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Infrastructure.Services.Services;
+namespace Infrastructure.Services;
 
 public class JwtManager : IJwtManager
 {
@@ -33,7 +33,10 @@ public class JwtManager : IJwtManager
 
     public async Task<TokenDto> GetTokenAsync(string username, string password, CancellationToken cancellationToken)
     {
-        var user = await GetUserAsync(username, password, cancellationToken);
+        var user = await GetUserAsync(
+            username: username,
+            password: password, 
+            cancellationToken: cancellationToken);
         var key = $"user_{user!.Guid}";
 
         var cachedToken = await _distributedCache.GetAsync(key, cancellationToken);
@@ -51,7 +54,7 @@ public class JwtManager : IJwtManager
     {
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(_configuration["JWT:Key"]!);
-        
+
         try
         {
             tokenHandler.ValidateToken(token, new TokenValidationParameters
@@ -102,7 +105,9 @@ public class JwtManager : IJwtManager
 
     private async Task<User?> GetUserAsync(string username, string password, CancellationToken cancellationToken)
     {
-        var user = await _unitOfWork.UserRepository.GetAsync(username: username, password: password,
+        var user = await _unitOfWork.UserRepository.GetAsync(
+            username: username,
+            password: password,
             cancellationToken: cancellationToken);
 
         if (user is null)
