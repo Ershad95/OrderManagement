@@ -32,6 +32,10 @@ public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand, Upd
         try
         {
             var currentUser = await _userService.GetCurrentUserAsync(cancellationToken);
+            if (currentUser is null)
+            {
+                throw new Exception("user not found");
+            }
             var order = await _unitOfWork.OrderRepository.GetOrderAsync(
                 id: request.Id,
                 userId: currentUser.Id,
@@ -39,7 +43,7 @@ public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand, Upd
 
             if (order is null)
             {
-                throw new UnauthorizedAccessException();
+                throw new Exception("can not update this order");
             }
             
             var checkPart = currentUser.Parts!.Any(x => x.Id == order.PartId);
