@@ -1,7 +1,57 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
+    "net8.0": {
+      "Autofac/6.4.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "4.7.1"
+        },
+        "compile": {
+          "lib/net6.0/Autofac.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Autofac.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Autofac.Extensions.DependencyInjection/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Autofac": "6.4.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Autofac.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Autofac.Extensions.DependencyInjection.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Autofac.Extras.DynamicProxy/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Autofac": "6.2.0",
+          "Castle.Core": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Autofac.Extras.DynamicProxy.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Autofac.Extras.DynamicProxy.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -130,6 +180,92 @@
         },
         "runtime": {
           "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http/2.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.WebUtilities": "2.2.0",
+          "Microsoft.Extensions.ObjectPool": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0",
+          "Microsoft.Net.Http.Headers": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
+          "System.Text.Encodings.Web": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Microsoft.AspNetCore.WebUtilities/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Net.Http.Headers": "2.2.0",
+          "System.Text.Encodings.Web": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {
             "related": ".xml"
           }
         }
@@ -623,6 +759,19 @@
           "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
+      "Microsoft.Extensions.ObjectPool/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Options/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -789,6 +938,23 @@
           }
         }
       },
+      "Microsoft.Net.Http.Headers/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.2.0",
+          "System.Buffers": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
         "compile": {
@@ -875,6 +1041,75 @@
         },
         "runtime": {
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Nobisoft.Core/1.0.48.6": {
+        "type": "package",
+        "dependencies": {
+          "Autofac": "6.4.0",
+          "Autofac.Extensions.DependencyInjection": "8.0.0",
+          "Autofac.Extras.DynamicProxy": "6.0.1",
+          "Microsoft.AspNetCore.Mvc.Versioning": "5.0.0",
+          "Microsoft.Extensions.Primitives": "6.0.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0/Nobisoft.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Nobisoft.Core.dll": {}
+        }
+      },
+      "Nobisoft.Core.Domain/1.0.23.4": {
+        "type": "package",
+        "dependencies": {
+          "MediatR": "10.0.1",
+          "Nobisoft.Core": "1.0.48.6"
+        },
+        "compile": {
+          "lib/net6.0/Nobisoft.Core.Domain.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Nobisoft.Core.Domain.dll": {}
+        }
+      },
+      "Nobisoft.Core.HttpContextAccessor/1.0.7.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http": "2.2.2",
+          "Nobisoft.Core": "1.0.48.6",
+          "Nobisoft.Core.Domain": "1.0.23.4"
+        },
+        "compile": {
+          "lib/net6.0/Nobisoft.Core.HttpContextAccessor.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Nobisoft.Core.HttpContextAccessor.dll": {}
+        }
+      },
+      "ServiceCollector.Abstractions/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/ServiceCollector.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/ServiceCollector.Abstractions.dll": {}
         }
       },
       "System.Buffers/4.5.1": {
@@ -1375,13 +1610,15 @@
       },
       "Application/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
           "Domain": "1.0.0",
           "MassTransit.Abstractions": "8.1.0",
           "MediatR": "12.1.1",
-          "MediatR.Contracts": "2.0.1"
+          "MediatR.Contracts": "2.0.1",
+          "Nobisoft.Core.HttpContextAccessor": "1.0.7.1",
+          "ServiceCollector.Abstractions": "2.0.0"
         },
         "compile": {
           "bin/placeholder/Application.dll": {}
@@ -1392,7 +1629,7 @@
       },
       "Domain/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/Domain.dll": {}
         },
@@ -1403,6 +1640,64 @@
     }
   },
   "libraries": {
+    "Autofac/6.4.0": {
+      "sha512": "tkFxl6wAPuwVhrlN8wuNADnd+k2tv4ReP7ZZSL0vjfcN0RcfC9v25ogxK6b03HC7D4NwWjSLf1G/zTG8Bw43wQ==",
+      "type": "package",
+      "path": "autofac/6.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "autofac.6.4.0.nupkg.sha512",
+        "autofac.nuspec",
+        "icon.png",
+        "lib/net5.0/Autofac.dll",
+        "lib/net5.0/Autofac.xml",
+        "lib/net6.0/Autofac.dll",
+        "lib/net6.0/Autofac.xml",
+        "lib/netstandard2.0/Autofac.dll",
+        "lib/netstandard2.0/Autofac.xml",
+        "lib/netstandard2.1/Autofac.dll",
+        "lib/netstandard2.1/Autofac.xml"
+      ]
+    },
+    "Autofac.Extensions.DependencyInjection/8.0.0": {
+      "sha512": "nGrXNpQX2FiZpIBydK9cxZnnoqP/cUd3k/53uRERYEqLtWzKtE15R6L+j5q5ax5Rv/+3wAIkOaPePkahfqrwjg==",
+      "type": "package",
+      "path": "autofac.extensions.dependencyinjection/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+        "autofac.extensions.dependencyinjection.nuspec",
+        "icon.png",
+        "lib/net5.0/Autofac.Extensions.DependencyInjection.dll",
+        "lib/net5.0/Autofac.Extensions.DependencyInjection.xml",
+        "lib/net6.0/Autofac.Extensions.DependencyInjection.dll",
+        "lib/net6.0/Autofac.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.0/Autofac.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.0/Autofac.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.1/Autofac.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.1/Autofac.Extensions.DependencyInjection.xml"
+      ]
+    },
+    "Autofac.Extras.DynamicProxy/6.0.1": {
+      "sha512": "+ulCOXUjbJ5dljBPZf3gRxQNPRGqg/h1cNTZ4SpXK3qiamTfRsW3gXs2w/IJ+CIDmHrFGYXLqzNd5etvzwB8kA==",
+      "type": "package",
+      "path": "autofac.extras.dynamicproxy/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "autofac.extras.dynamicproxy.6.0.1.nupkg.sha512",
+        "autofac.extras.dynamicproxy.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Autofac.Extras.DynamicProxy.dll",
+        "lib/netstandard2.0/Autofac.Extras.DynamicProxy.xml",
+        "lib/netstandard2.1/Autofac.Extras.DynamicProxy.dll",
+        "lib/netstandard2.1/Autofac.Extras.DynamicProxy.xml"
+      ]
+    },
     "AutoMapper/12.0.1": {
       "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
       "type": "package",
@@ -1549,6 +1844,77 @@
         "lib/netstandard2.0/MediatR.Contracts.xml",
         "mediatr.contracts.2.0.1.nupkg.sha512",
         "mediatr.contracts.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http/2.2.2": {
+      "sha512": "BAibpoItxI5puk7YJbIGj95arZueM8B8M5xT1fXBn3hb3L2G3ucrZcYXv1gXdaroLbntUs8qeV8iuBrpjQsrKw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http/2.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.xml",
+        "microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
+        "microsoft.aspnetcore.http.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
+      "sha512": "Nxs7Z1q3f1STfLYKJSVXCs1iBl+Ya6E8o4Oy1bCxJ/rNI44E/0f6tbsrVqAWfB7jlnJfyaAtIalBVxPKUPQb4Q==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.abstractions/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.xml",
+        "microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.http.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/2.2.0": {
+      "sha512": "ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/5.0.0": {
+      "sha512": "mN9IARvNpHMBD2/oGmp5Bxp1Dg45Hfcp+LWaAyTtL2HisWLMOIcf0Ox1qW9IvCvdbHM+2A9dWEInhiqBsNxsJA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.mvc.versioning/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "icon.png",
+        "lib/net5.0/Microsoft.AspNetCore.Mvc.Versioning.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Mvc.Versioning.pdb",
+        "lib/net5.0/Microsoft.AspNetCore.Mvc.Versioning.xml",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.pdb",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.xml",
+        "microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.versioning.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.WebUtilities/2.2.0": {
+      "sha512": "9ErxAAKaDzxXASB/b5uLEkLgUWv1QbeVxyJYEHQwMaxXOeFFVkQxiq8RyfVcifLU7NR0QY0p3acqx4ZpYfhHDg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.webutilities/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.xml",
+        "microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.webutilities.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -2277,6 +2643,19 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.ObjectPool/2.2.0": {
+      "sha512": "gA8H7uQOnM5gb+L0uTNjViHYr+hRDqCdfugheGo/MxQnuHzmhhzCBTIPm19qL1z1Xe0NEMabfcOBGv9QghlZ8g==",
+      "type": "package",
+      "path": "microsoft.extensions.objectpool/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.xml",
+        "microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
+        "microsoft.extensions.objectpool.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Options/7.0.0": {
       "sha512": "lP1yBnTTU42cKpMozuafbvNtQ7QcBjr/CcK3bYOGEMH55Fjt+iecXjT6chR7vbgCMqy3PG3aNQSZgo/EuY/9qQ==",
       "type": "package",
@@ -2508,6 +2887,19 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
+    "Microsoft.Net.Http.Headers/2.2.0": {
+      "sha512": "iZNkjYqlo8sIOI0bQfpsSoMTmB/kyvmV2h225ihyZT33aTp48ZpF6qYnXxzSXmHt8DpBAwBTX+1s1UFLbYfZKg==",
+      "type": "package",
+      "path": "microsoft.net.http.headers/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll",
+        "lib/netstandard2.0/Microsoft.Net.Http.Headers.xml",
+        "microsoft.net.http.headers.2.2.0.nupkg.sha512",
+        "microsoft.net.http.headers.nuspec"
+      ]
+    },
     "Microsoft.NETCore.Platforms/5.0.0": {
       "sha512": "VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
       "type": "package",
@@ -2642,6 +3034,82 @@
         "lib/netstandard2.0/Mono.TextTemplating.dll",
         "mono.texttemplating.2.2.1.nupkg.sha512",
         "mono.texttemplating.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Nobisoft.Core/1.0.48.6": {
+      "sha512": "5ZnsjB/t9ZPcc0+DW0Wcux3MIeK5AYwU14BcNUPA17seyS+ofnRMAZfr5bK+b6etVyohiqMv+QP4biyrfVSghg==",
+      "type": "package",
+      "path": "nobisoft.core/1.0.48.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/Nobisoft.Core.dll",
+        "nobisoft.core.1.0.48.6.nupkg.sha512",
+        "nobisoft.core.nuspec"
+      ]
+    },
+    "Nobisoft.Core.Domain/1.0.23.4": {
+      "sha512": "sjitHajWSQCBnCuSEDXVFeJoNcpJzuqT+QvyE8PPNe0MtQQRFTPMT4PFfVhdtggtdybRxYa1U/o7VgHuopYZAg==",
+      "type": "package",
+      "path": "nobisoft.core.domain/1.0.23.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/Nobisoft.Core.Domain.dll",
+        "nobisoft.core.domain.1.0.23.4.nupkg.sha512",
+        "nobisoft.core.domain.nuspec"
+      ]
+    },
+    "Nobisoft.Core.HttpContextAccessor/1.0.7.1": {
+      "sha512": "pYIDkFk/kyRw++/7zci+IZKYwrcJm5e4vWTK8Z07bh1Wa+gHDTk6xxpnCxue340MTpUO1W7xXmo+/TuabBVHhg==",
+      "type": "package",
+      "path": "nobisoft.core.httpcontextaccessor/1.0.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/Nobisoft.Core.HttpContextAccessor.dll",
+        "nobisoft.core.httpcontextaccessor.1.0.7.1.nupkg.sha512",
+        "nobisoft.core.httpcontextaccessor.nuspec"
+      ]
+    },
+    "ServiceCollector.Abstractions/2.0.0": {
+      "sha512": "l9YcaePBGPAdV/kalwGiuUNFzRJHUyD8XQeBXC7Bv8THRNy11PRyoNjZqblFThWhSSvyhr2yvWP66cwJEgrgHg==",
+      "type": "package",
+      "path": "servicecollector.abstractions/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0/ServiceCollector.Abstractions.dll",
+        "servicecollector.abstractions.2.0.0.nupkg.sha512",
+        "servicecollector.abstractions.nuspec"
       ]
     },
     "System.Buffers/4.5.1": {
@@ -4034,7 +4502,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
+    "net8.0": [
       "Application >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.8",
@@ -4043,36 +4511,40 @@
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.8",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Microsoft.Extensions.Configuration.FileExtensions >= 7.0.0",
-      "Microsoft.Extensions.Configuration.Json >= 7.0.0"
+      "Microsoft.Extensions.Configuration.Json >= 7.0.0",
+      "ServiceCollector.Abstractions >= 2.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ershad\\.nuget\\packages\\": {}
+    "C:\\Users\\e.raoufi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj",
+      "projectUniqueName": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj",
       "projectName": "Infastraucture.EfCore",
-      "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj",
-      "packagesPath": "C:\\Users\\Ershad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\obj\\",
+      "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj",
+      "packagesPath": "C:\\Users\\e.raoufi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Ershad\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\e.raoufi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net8.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://pactfoundation.jfrog.io/artifactory/api/nuget/default-nuget-local": {},
+        "https://repo.asax.ir/public/nuget/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Application\\Application.csproj"
+            "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Application\\Application.csproj"
             }
           }
         }
@@ -4084,8 +4556,8 @@
       }
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -4122,6 +4594,10 @@
           "Microsoft.Extensions.Configuration.Json": {
             "target": "Package",
             "version": "[7.0.0, )"
+          },
+          "ServiceCollector.Abstractions": {
+            "target": "Package",
+            "version": "[2.0.0, )"
           }
         },
         "imports": [
@@ -4140,7 +4616,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

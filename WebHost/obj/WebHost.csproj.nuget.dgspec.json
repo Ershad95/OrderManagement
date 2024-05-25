@@ -1,33 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\WebHost.csproj": {}
+    "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\WebHost\\WebHost.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Application\\Application.csproj": {
+    "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Ershad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Application\\obj\\",
+        "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\e.raoufi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ershad\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\e.raoufi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://pactfoundation.jfrog.io/artifactory/api/nuget/default-nuget-local": {},
+          "https://repo.asax.ir/public/nuget/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj"
+              "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj"
               }
             }
           }
@@ -39,8 +42,8 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -57,6 +60,14 @@
             "MediatR.Contracts": {
               "target": "Package",
               "version": "[2.0.1, )"
+            },
+            "Nobisoft.Core.HttpContextAccessor": {
+              "target": "Package",
+              "version": "[1.0.7.1, )"
+            },
+            "ServiceCollector.Abstractions": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             }
           },
           "imports": [
@@ -75,31 +86,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj": {
+    "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Ershad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\e.raoufi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ershad\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\e.raoufi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://pactfoundation.jfrog.io/artifactory/api/nuget/default-nuget-local": {},
+          "https://repo.asax.ir/public/nuget/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -110,8 +124,8 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
@@ -128,34 +142,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj": {
+    "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj",
+        "projectUniqueName": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj",
         "projectName": "Infastraucture.EfCore",
-        "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj",
-        "packagesPath": "C:\\Users\\Ershad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\obj\\",
+        "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj",
+        "packagesPath": "C:\\Users\\e.raoufi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ershad\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\e.raoufi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://pactfoundation.jfrog.io/artifactory/api/nuget/default-nuget-local": {},
+          "https://repo.asax.ir/public/nuget/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Application\\Application.csproj"
+              "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Application\\Application.csproj"
               }
             }
           }
@@ -167,8 +184,8 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -205,6 +222,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "ServiceCollector.Abstractions": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             }
           },
           "imports": [
@@ -223,37 +244,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj": {
+    "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj",
+        "projectUniqueName": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj",
         "projectName": "Infrastructure.Services",
-        "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj",
-        "packagesPath": "C:\\Users\\Ershad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infrastructure.Services\\obj\\",
+        "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj",
+        "packagesPath": "C:\\Users\\e.raoufi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infrastructure.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ershad\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\e.raoufi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://pactfoundation.jfrog.io/artifactory/api/nuget/default-nuget-local": {},
+          "https://repo.asax.ir/public/nuget/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Application\\Application.csproj"
+              "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Application\\Application.csproj"
               },
-              "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj"
+              "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Domain\\Domain.csproj"
               }
             }
           }
@@ -265,8 +289,8 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
@@ -287,6 +311,10 @@
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "ServiceCollector.Abstractions": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -309,38 +337,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\WebHost.csproj": {
+    "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\WebHost\\WebHost.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\WebHost.csproj",
+        "projectUniqueName": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\WebHost\\WebHost.csproj",
         "projectName": "WebHost",
-        "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\WebHost.csproj",
-        "packagesPath": "C:\\Users\\Ershad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\WebHost\\obj\\",
+        "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\WebHost\\WebHost.csproj",
+        "packagesPath": "C:\\Users\\e.raoufi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\WebHost\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ershad\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\e.raoufi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\sdk\\7.0.305\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://pactfoundation.jfrog.io/artifactory/api/nuget/default-nuget-local": {},
+          "https://repo.asax.ir/public/nuget/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj": {
-                "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj"
+              "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj": {
+                "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infastraucture.EfCore\\Infastraucture.EfCore.csproj"
               },
-              "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj": {
-                "projectPath": "C:\\Users\\Ershad\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj"
+              "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj": {
+                "projectPath": "C:\\Users\\e.raoufi\\RiderProjects\\OrderManagement\\Infrastructure.Services\\Infrastructure.Services.csproj"
               }
             }
           }
@@ -352,8 +382,8 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -419,6 +449,10 @@
               "target": "Package",
               "version": "[1.1.1, )"
             },
+            "ServiceCollector.Core": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -455,7 +489,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

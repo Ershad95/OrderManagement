@@ -1,10 +1,13 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using MassTransit;
+using Microsoft.OpenApi.Models;
+using ServiceCollector.Abstractions;
+using WebHost.Middleware;
 
-namespace WebHost.Extensions;
+namespace WebHost;
 
-public static class SwaggerExtension
+public class ServiceRegistration : IServiceDiscovery
 {
-    public static void Swagger(this IServiceCollection serviceCollection)
+    public void AddServices(IServiceCollection serviceCollection)
     {
         serviceCollection.AddSwaggerGen(options =>
         {
@@ -39,5 +42,17 @@ public static class SwaggerExtension
                 }
             });
         });
+        
+        serviceCollection.AddMassTransit(configurator =>
+        {
+            configurator.UsingInMemory((context, cfg) => { cfg.ConfigureEndpoints(context); });
+
+            configurator.AddConsumer(typeof(Infrastructure.Services.EventConsumer.OrderCreated));
+            configurator.AddConsumer(typeof(Infrastructure.Services.EventConsumer.OrderDeleted));
+            configurator.AddConsumer(typeof(Infrastructure.Services.EventConsumer.OrderUpdated));
+        });
+        
+        serviceCollection.AddTransient<CheckTokenMiddleware>();
+
     }
 }

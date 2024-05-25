@@ -1,6 +1,7 @@
 using Application.Features.Order.AddOrder;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using ServiceCollector.Core;
 using StackExchange.Redis;
 using WebHost.Extensions;
 using WebHost.Middleware;
@@ -14,10 +15,8 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(AddOrderCommand).Assembly));
 
-builder.Services.CustomServiceRegistration();
+builder.Services.AddServiceDiscovery();
 builder.Services.Serilog(builder.Configuration);
-builder.Services.MassTransit();
-builder.Services.Swagger();
 builder.Services.Jwt(builder.Configuration);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -26,7 +25,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddTransient<CheckTokenMiddleware>();
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddStackExchangeRedisCache(options =>
